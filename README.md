@@ -6,7 +6,7 @@ A Tampermonkey script for event viewer.
 
 1. Clone the repository
 2. `yarn install`
-3. `yarn build`
+3. `yarn build:tampermonkey`
 4. Install the `dist/bundle.js` to Tampermonkey
 
 ## Browser Compatibility
