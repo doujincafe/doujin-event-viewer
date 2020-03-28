@@ -1,0 +1,8 @@
+{
+  "prettier.singleQuote": true,
+  "prettier.endOfLine": "lf",
+  "prettier.tabWidth": 2,
+  "prettier.trailingComma": "none",
+  "prettier.arrowParens": "always",
+  "prettier.packageManager": "yarn"
+}
