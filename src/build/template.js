@@ -25,7 +25,6 @@ const template =
 // @include     https://www.youtube.com/watch
 // @include     https://www.discogs.com/*/release/*
 // @version     ${require('../../package.json').version}
-// @require     file:///D:/User%20Directories/Code/Projects/event-viewer/dist/bundle.js
 // @grant
 // ==/UserScript==
 ${read}

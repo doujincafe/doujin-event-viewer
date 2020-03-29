@@ -32,18 +32,15 @@ class Extension {
       support.el.forEach(value => {
         const el = $(value)
 
-        console.log(el)
         if (support.waitUntilReady) {
           $(document).ready(() => {
             for (const key in support.events) {
-              console.log(el.html())
               const content = replaceAll(support.events[key], key, el.html())
               el.html(content)
             }
           })
         } else {
           for (const key in support.events) {
-            console.log(el.html())
             const content = replaceAll(support.events[key], key, el.html())
             el.html(content)
           }
