@@ -34,7 +34,7 @@ const addEventsToDates = (support) => {
 
           if (date) {
             // Set the locale. Defaults to 'ja'
-            Settings.defaultLocale = support.locale || 'ja'
+            if (support.locale) Settings.defaultLocale = support.locale
 
             // Find the date from events list.
             for (const event in events) {
