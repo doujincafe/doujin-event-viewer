@@ -5,7 +5,8 @@
 // Licensed under MIT
 // ============================================================================
 
-import Extension from './lib/showEvents'
+import addEventsToDates from './lib/addEventsToDates'
+import renameEvents from './lib/renameEvents'
 
 // Support
 import surugaya from './support/suruga-ya'
@@ -27,5 +28,5 @@ const loadRenames = [
   youtube
 ]
 
-load.forEach(Extension.addEventsToDates)
-loadRenames.forEach(Extension.renameEvents)
+load.forEach(addEventsToDates)
+loadRenames.forEach(renameEvents)
