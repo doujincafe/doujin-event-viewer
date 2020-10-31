@@ -1,17 +1,12 @@
 # Event Viewer
 
-A Tampermonkey script for event viewer.
+A [Tampermonkey](https://www.tampermonkey.net/) Script to display Doujin Event within dates on online doujin marketplaces such as Suruga-ya, Melonbooks and more.
+
+__PS: The doujin events present here is not complete. If you wish to add more events, please open up a issue, write the events with their dates and then include sources to verify.__
 
 ## Usage
 
-1. Clone the repository
-2. `yarn install`
-3. `yarn build:tampermonkey`
-4. Install the `dist/bundle.js` to Tampermonkey
-
-### OR
-
-Just create a new tampermonkey script and paste this
+Just create a tampermonkey script and paste this code and it should work:
 
 ```js
 // ==UserScript==
@@ -19,13 +14,8 @@ Just create a new tampermonkey script and paste this
 // @namespace   Doujin Event Viewer
 // @author      Aiko Fujimoto
 // @description Adds Viewable Events to specific event dates
-// @include     https://www.suruga-ya.jp/search*
-// @include     https://www.suruga-ya.jp/product/detail/*
-// @include     https://www.melonbooks.co.jp/detail/*
-// @include     https://soundcloud.com/*/*
-// @include     https://www.youtube.com/watch?v=*
-// @include     https://www.discogs.com/*/release/*
-// @version     1.3
+// @match       *://*/*
+// @version     1.4
 // @require     https://raw.githubusercontent.com/aikoofujimotoo/doujin-event-viewer/master/dist/bundle.js
 // @grant
 // ==/UserScript==
@@ -34,10 +24,6 @@ Just create a new tampermonkey script and paste this
 ## Browser Compatibility
 
 This works on most modern browsers. This script doesn't support IE8 and below (Who uses those anyway).
-
-## Issues
-
-Got a problem? Open up a issue and I'll glad to look at it.
 
 ## License
 

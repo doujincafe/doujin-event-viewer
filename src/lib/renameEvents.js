@@ -5,7 +5,7 @@
 // Licensed under MIT
 // ============================================================================
 
-import * as jQuery from 'jquery'
+import jQuery from 'jquery'
 import * as replaceAll from 'replaceall'
 
 /**
@@ -17,7 +17,7 @@ import * as replaceAll from 'replaceall'
  */
 const renameEvents = (support) => {
   if (support.url.test(window.location.href)) {
-    jQuery(document).ready(() => {
+    jQuery(() => {
       support.el.forEach(value => {
         const el = jQuery(value)
         for (const key in support.events) {
