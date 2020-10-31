@@ -5,7 +5,7 @@
 // Licensed under MIT
 // ============================================================================
 
-import * as jQuery from 'jquery'
+import jQuery from 'jquery'
 import { DateTime, Settings, Interval } from 'luxon'
 
 /**
