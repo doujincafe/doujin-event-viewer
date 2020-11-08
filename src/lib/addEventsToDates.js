@@ -39,16 +39,16 @@ const addEventsToDates = (support) => {
             // Find the date from events list.
             for (const event in events) {
               if (typeof events[event] === 'object') {
-                const from = DateTime.fromString(events[event].from, 'yyyy/MM/dd')
-                const to = DateTime.fromString(events[event].to, 'yyyy/MM/dd')
-                const current = DateTime.fromString(date[0], formatting)
+                const from = DateTime.fromFormat(events[event].from, 'yyyy/MM/dd')
+                const to = DateTime.fromFormat(events[event].to, 'yyyy/MM/dd')
+                const current = DateTime.fromFormat(date[0], formatting)
 
                 if (Interval.fromDateTimes(from, to).contains(current)) {
                   el[key].innerHTML = el[key].innerText + ' [' + event + ']'
                 }
               } else {
-                const current = DateTime.fromString(date[0], formatting)
-                const eventDate = DateTime.fromString(events[event], 'yyyy/MM/dd')
+                const current = DateTime.fromFormat(date[0], formatting)
+                const eventDate = DateTime.fromFormat(events[event], 'yyyy/MM/dd')
 
                 if (current === eventDate) {
                   el[key].innerHTML = el[key].innerText + ' [' + event + ']'
