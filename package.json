@@ -23,11 +23,11 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.2",
     "webpack": "^5.3.2",
-    "webpack-cli": "^4.1.0",
+    "webpack-cli": "3",
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
-    "dev": "yarn webpack-dev-server",
+    "dev": "yarn run webpack-dev-server",
     "build": "yarn run webpack ."
   }
 }

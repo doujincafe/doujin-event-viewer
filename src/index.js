@@ -30,3 +30,5 @@ const loadRenames = [
 
 load.forEach(addEventsToDates)
 loadRenames.forEach(renameEvents)
+
+console.log('Up and running!');

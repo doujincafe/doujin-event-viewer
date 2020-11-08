@@ -34,13 +34,13 @@ const addEventsToDates = (support) => {
 
           if (date) {
             // Set the locale. Defaults to 'ja'
-            if (support.locale) Settings.defaultLocale = support.locale
+            if (support.locale) Settings.defaultLocale = support.locale;
 
             // Find the date from events list.
             for (const event in events) {
               if (typeof events[event] === 'object') {
                 const from = DateTime.fromFormat(events[event].from, 'yyyy/MM/dd')
-                const to = DateTime.fromFormat(events[event].to, 'yyyy/MM/dd')
+                const to = DateTime.fromFormat(events[event].to, 'yyyy/MM/dd').plus(1)
                 const current = DateTime.fromFormat(date[0], formatting)
 
                 if (Interval.fromDateTimes(from, to).contains(current)) {
@@ -50,7 +50,7 @@ const addEventsToDates = (support) => {
                 const current = DateTime.fromFormat(date[0], formatting)
                 const eventDate = DateTime.fromFormat(events[event], 'yyyy/MM/dd')
 
-                if (current === eventDate) {
+                if (current.equals(eventDate)) {
                   el[key].innerHTML = el[key].innerText + ' [' + event + ']'
                 }
               }
