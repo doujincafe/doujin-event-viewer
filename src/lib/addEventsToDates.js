@@ -5,57 +5,60 @@
 // Licensed under MIT
 // ============================================================================
 
-import jQuery from 'jquery'
+import $ from 'cash-dom'
 import { DateTime, Settings, Interval } from 'luxon'
+import events from '../common/events.json'
+
+const update = (el, obj) => {
+  const dateFormat = obj.formatting || 'yyyy/MM/dd'
+  const date = el.innerText.match(obj.date);
+
+  if (date) {
+    if (obj.locale) Settings.defaultLocale = obj.locale;
+
+    for (let i = 0, l = events.length; i < l; i++) {
+      const { evt, value } = events[i];
+
+      if (typeof value === 'object') {
+        const from = DateTime.fromFormat(value.from, 'yyyy/MM/dd');
+        const to = DateTime.fromFormat(value.to, 'yyyy/MM/dd').plus(1);
+        const current = DateTime.fromFormat(date[0], dateFormat);
+
+        if (Interval.fromDateTimes(from, to).contains(current)) {
+          el.innerText += ` [${evt}]`;
+        }
+      } else {
+        const current = DateTime.fromFormat(date[0], dateFormat)
+        const eventDate = DateTime.fromFormat(value, 'yyyy/MM/dd')
+
+        if (current.equals(eventDate)) {
+          el.innerText += ` [${evt}]`
+        }
+      }
+    }
+  }
+}
 
 /**
  * Add events to dates
- * @param {Object} support Support config
- * @param {RegExp} support.url A regex to match what URLs the config should run
- * @param {RegExp} support.date A regex to match dates on target elements
- * @param {string} support.formatting Custom date formatting
- * @param {string[]} support.el Array of target elements
- * @param {Object} support.events The list of events for matching
- * @param {string} support.locale A 2 character locale string for date.
+ * @param {Object} obj Support config
+ * @param {RegExp} obj.url A regex to match what URLs the config should run
+ * @param {RegExp} obj.date A regex to match dates on target elements
+ * @param {string} obj.formatting Custom date formatting
+ * @param {string[]} obj.el Array of target elements
+ * @param {string} obj.locale A 2 character locale string for date.
  */
-const addEventsToDates = (support) => {
-  if (support.url.test(window.location.href)) {
-    support.el.forEach(value => {
-      const el = jQuery(value)
-      const events = support.events
+const addEventsToDates = (obj) => {
+  if (window.location.href.match(obj.url)) {
+    obj.el.forEach(value => {
+      const el = $(value)
 
       for (const key in el) {
         if (Object.prototype.hasOwnProperty.call(el, key)) {
-          // Do not entertain empty innertexts
-          if (!el[key].innerText) return
+          // Do not entertain empty innertexts and non-Element properties.
+          if (!el[key].innerText || !(el[key] instanceof Element)) return
 
-          const date = el[key].innerText.match(support.date)
-          const formatting = support.formatting || 'yyyy/MM/dd'
-
-          if (date) {
-            // Set the locale. Defaults to 'ja'
-            if (support.locale) Settings.defaultLocale = support.locale;
-
-            // Find the date from events list.
-            for (const event in events) {
-              if (typeof events[event] === 'object') {
-                const from = DateTime.fromFormat(events[event].from, 'yyyy/MM/dd')
-                const to = DateTime.fromFormat(events[event].to, 'yyyy/MM/dd').plus(1)
-                const current = DateTime.fromFormat(date[0], formatting)
-
-                if (Interval.fromDateTimes(from, to).contains(current)) {
-                  el[key].innerHTML = el[key].innerText + ' [' + event + ']'
-                }
-              } else {
-                const current = DateTime.fromFormat(date[0], formatting)
-                const eventDate = DateTime.fromFormat(events[event], 'yyyy/MM/dd')
-
-                if (current.equals(eventDate)) {
-                  el[key].innerHTML = el[key].innerText + ' [' + event + ']'
-                }
-              }
-            }
-          }
+          update(el[key], obj);
         }
       }
     })

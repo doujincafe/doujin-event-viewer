@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "jquery": "^3.5.1",
+    "cash-dom": "^8.1.0",
     "luxon": "^1.25.0",
     "replaceall": "^0.1.6"
   },
@@ -22,12 +22,10 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.2",
-    "webpack": "^5.3.2",
-    "webpack-cli": "3",
-    "webpack-dev-server": "^3.11.0"
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0"
   },
   "scripts": {
-    "dev": "yarn run webpack-dev-server",
     "build": "yarn run webpack ."
   }
 }

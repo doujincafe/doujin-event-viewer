@@ -5,7 +5,7 @@
 // Licensed under MIT
 // ============================================================================
 
-import jQuery from 'jquery'
+import $ from 'cash-dom'
 import * as replaceAll from 'replaceall'
 
 /**
@@ -17,9 +17,9 @@ import * as replaceAll from 'replaceall'
  */
 const renameEvents = (support) => {
   if (support.url.test(window.location.href)) {
-    jQuery(() => {
+    $(() => {
       support.el.forEach(value => {
-        const el = jQuery(value)
+        const el = $(value)
         for (const key in support.events) {
           const content = replaceAll(support.events[key], key, el.html())
           el.html(content)
