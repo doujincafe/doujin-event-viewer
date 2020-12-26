@@ -26,6 +26,6 @@
     "webpack-cli": "^4.3.0"
   },
   "scripts": {
-    "build": "yarn run webpack ."
+    "build": "yarn run webpack"
   }
 }
