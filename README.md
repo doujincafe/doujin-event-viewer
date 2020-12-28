@@ -21,7 +21,7 @@ Just create a tampermonkey script and paste this code and it should work:
 // ==/UserScript==
 ```
 
-If you have troubles (like not getting updates), please consider using the compiled release instead. It can be found [here](https://github.com/aikoofujimotoo/releases/latest).
+If you have troubles (like not getting updates), please consider using the compiled release instead. It can be found [here](https://github.com/aikoofujimotoo/doujin-event-viewer/releases/latest).
 
 ## Browser Compatibility
 
