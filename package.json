@@ -1,6 +1,6 @@
 {
   "name": "event-viewer",
-  "version": "1.5",
+  "version": "1.5.1",
   "description": "A event viewer script to modify dates in event stores such as suruga-ya to indicate event names",
   "main": "./src/index.js",
   "repository": "https://github.com/aikoofujimotoo/event-viewer",
