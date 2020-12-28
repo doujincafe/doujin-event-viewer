@@ -13,6 +13,7 @@ module.exports = {
     ecmaVersion: 2018
   },
   rules: {
-    'no-duplicate-imports': 'ignore'
+    'no-duplicate-imports': 0,
+    'import/no-duplicates': 0
   }
 }

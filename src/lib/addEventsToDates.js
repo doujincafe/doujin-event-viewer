@@ -11,21 +11,21 @@ import events from '../common/events.json'
 
 const update = (el, obj) => {
   const dateFormat = obj.formatting || 'yyyy/MM/dd'
-  const date = el.innerText.match(obj.date);
+  const date = el.innerText.match(obj.date)
 
   if (date) {
-    if (obj.locale) Settings.defaultLocale = obj.locale;
+    if (obj.locale) Settings.defaultLocale = obj.locale
 
     for (let i = 0, l = events.length; i < l; i++) {
-      const { evt, value } = events[i];
+      const { evt, value } = events[i]
 
       if (typeof value === 'object') {
-        const from = DateTime.fromFormat(value.from, 'yyyy/MM/dd');
-        const to = DateTime.fromFormat(value.to, 'yyyy/MM/dd').plus(1);
-        const current = DateTime.fromFormat(date[0], dateFormat);
+        const from = DateTime.fromFormat(value.from, 'yyyy/MM/dd')
+        const to = DateTime.fromFormat(value.to, 'yyyy/MM/dd').plus(1)
+        const current = DateTime.fromFormat(date[0], dateFormat)
 
         if (Interval.fromDateTimes(from, to).contains(current)) {
-          el.innerText += ` [${evt}]`;
+          el.innerText += ` [${evt}]`
         }
       } else {
         const current = DateTime.fromFormat(date[0], dateFormat)
@@ -58,7 +58,7 @@ const addEventsToDates = (obj) => {
           // Do not entertain empty innertexts and non-Element properties.
           if (!el[key].innerText || !(el[key] instanceof Element)) return
 
-          update(el[key], obj);
+          update(el[key], obj)
         }
       }
     })
