@@ -23,6 +23,14 @@ Just create a tampermonkey script and paste this code and it should work:
 
 If you have troubles (like not getting updates), please consider using the compiled release instead. It can be found [here](https://github.com/aikoofujimotoo/doujin-event-viewer/releases/latest).
 
+## Compiling from Source
+
+Before you compile the project, ensure you have the latest Node.js and Yarn.
+
+1. Clone the repository: `git clone https://github.com/aikoofujimotoo/doujin-event-viewer.git`
+2. Get inside: `cd doujin-event-viewer`
+3. Run `yarn build`
+
 ## Browser Compatibility
 
 This works on most modern browsers. This script doesn't support IE8 and below (Who uses those anyway).
