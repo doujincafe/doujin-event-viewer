@@ -430,7 +430,7 @@ COMITIA132: 2020.05.17
 COMITIA133: 2020.09.21
 COMITIA134: 2020.11.23
 
-Sunshine Creation / サンクリ / SC 
+# Sunshine Creation / サンクリ / SC 
 
 サンクリ1: 1998.09.27
 サンクリ2: 1999.01.17
