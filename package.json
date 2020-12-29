@@ -1,6 +1,6 @@
 {
   "name": "event-viewer",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "A event viewer script to modify dates in event stores such as suruga-ya to indicate event names",
   "main": "./src/index.js",
   "repository": "https://github.com/aikoofujimotoo/event-viewer",
@@ -26,7 +26,7 @@
     "webpack-cli": "^4.3.0"
   },
   "scripts": {
-    "build": "yarn run webpack",
+    "build": "node ./scripts/generateEventJson.js && yarn run webpack",
     "fix": "yarn run eslint --fix ./src/*"
   }
 }
