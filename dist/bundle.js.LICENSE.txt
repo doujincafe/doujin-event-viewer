@@ -1,4 +1,0 @@
-/*!
-    replaceall (v0.1.6) 23-04-2015
-    (c) Lee Crossley <leee@hotmail.co.uk> (http://ilee.co.uk/)
-*/

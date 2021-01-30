@@ -1,5 +1,12 @@
 node_modules/
 *.log
+dist/*
+
+# Do not exclude .gitkeep
+!dist/.gitkeep
+
+# Exclude debug scripts.
+*.debug.js
 
 # Zero-Installs
 .yarn/*
