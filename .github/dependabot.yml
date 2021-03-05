@@ -11,7 +11,7 @@ updates:
     schedule:
       interval: "daily"
     commit-message:
-      prefix: "[chore] dependabot:"
+      prefix: "[chore]"
     reviewers:
       - "aikoofujimotoo"
     assignees:
