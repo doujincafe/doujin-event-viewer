@@ -9,34 +9,43 @@ import $ from 'cash-dom'
 import { DateTime, Settings, Interval } from 'luxon'
 import events from '../common/events.json'
 
+/**
+ * Update
+ * @param {Element} el target element to write events
+ * @param {Object} obj Support config
+ * @param {RegExp} obj.url A regex to match what URLs the config should run
+ * @param {RegExp} obj.date A regex to match dates on target elements
+ * @param {string} obj.formatting Custom date formatting
+ * @param {string} obj.locale A 2 character locale string for date.
+ */
 const update = (el, obj) => {
   const dateFormat = obj.formatting || 'yyyy/MM/dd'
   const date = el.innerText.match(obj.date)
 
-  if (date) {
-    if (obj.locale) Settings.defaultLocale = obj.locale
+  // If locale is specified, then set the default date locale.
+  if (obj.locale) Settings.defaultLocale = obj.locale
 
-    for (let i = 0, l = events.length; i < l; i++) {
-      const { evt, value } = events[i]
+  // If not matched from regex, then bail.
+  if (!date) return
 
-      if (typeof value === 'object') {
-        const from = DateTime.fromFormat(value.from, 'yyyy/MM/dd')
-        const to = DateTime.fromFormat(value.to, 'yyyy/MM/dd').plus(1)
-        const current = DateTime.fromFormat(date[0], dateFormat)
+  events.filter((event) => {
+    const { value } = event
 
-        if (Interval.fromDateTimes(from, to).contains(current)) {
-          el.innerText += ` [${evt}]`
-        }
-      } else {
-        const current = DateTime.fromFormat(date[0], dateFormat)
-        const eventDate = DateTime.fromFormat(value, 'yyyy/MM/dd')
+    if (typeof value === 'object') {
+      const from = DateTime.fromFormat(value.from, 'yyyy/MM/dd')
+      const to = DateTime.fromFormat(value.to, 'yyyy/MM/dd').plus(1)
+      const current = DateTime.fromFormat(date[0], dateFormat)
 
-        if (current.equals(eventDate)) {
-          el.innerText += ` [${evt}]`
-        }
-      }
+      return Interval.fromDateTimes(from, to).contains(current)
     }
-  }
+
+    const current = DateTime.fromFormat(date[0], dateFormat)
+    const eventDate = DateTime.fromFormat(value, 'yyyy/MM/dd')
+
+    return current.equals(eventDate)
+  }).forEach((event) => {
+    el.innerText += ` [${event.evt}]`
+  })
 }
 
 /**
