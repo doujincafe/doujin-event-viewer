@@ -6,9 +6,9 @@ __PS: The doujin events present here is not complete. If you wish to add more ev
 
 ## Usage
 
-Get the latest release [here](https://github.com/aikoofujimotoo/doujin-event-viewer/releases/latest). Select either from `stable` (recommended) or `debug`. Both are the same but `debug` builds contains logger for debugging which slows the time to show the event.
+Get the latest release [here](https://github.com/aikoofujimotoo/doujin-event-viewer/releases/latest).
 
-By clicking one of the flavours, it should prompt tampermonkey to install the script otherwise, you need to copy and paste the content to newly created tampermonkey script.
+It should prompt tampermonkey to install the script otherwise, you need to copy and paste the content to newly created tampermonkey script.
 
 ## Compiling from Source
 
