@@ -16,17 +16,21 @@ import * as replaceAll from 'replaceall'
  * @param {Object} support.events The list of events
  */
 const renameEvents = (support) => {
-  if (support.url.test(window.location.href)) {
-    $(() => {
-      support.el.forEach(value => {
-        const el = $(value)
-        for (const key in support.events) {
+  if (!support.url.test(window.location.href)) {
+    return
+  }
+
+  $(() => {
+    support.el.forEach(value => {
+      const el = $(value)
+      for (const key in support.events) {
+        if (Object.prototype.hasOwnProperty.call(el, key)) {
           const content = replaceAll(support.events[key], key, el.html())
           el.html(content)
         }
-      })
+      }
     })
-  }
+  })
 }
 
 export default renameEvents

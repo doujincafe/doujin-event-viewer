@@ -28,7 +28,7 @@ const update = (el, obj) => {
   // If not matched from regex, then bail.
   if (!date) return
 
-  events.filter((event) => {
+  const filtered = events.filter((event) => {
     const { value } = event
 
     if (typeof value === 'object') {
@@ -43,9 +43,9 @@ const update = (el, obj) => {
     const eventDate = DateTime.fromFormat(value, 'yyyy/MM/dd')
 
     return current.equals(eventDate)
-  }).forEach((event) => {
-    el.innerText += ` [${event.evt}]`
   })
+
+  el.innerText += ` ${filtered.map(c => `[${c.evt}]`).join(' ')}`
 }
 
 /**
