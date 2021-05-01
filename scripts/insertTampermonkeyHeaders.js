@@ -8,7 +8,6 @@
 const fs = require('fs')
 const path = require('path')
 const pkg = require('../package.json')
-const isDebug = process.env.DEBUGBUILD
 
 const code = fs.readFileSync(path.join(__dirname, '../dist/bundle.js'), 'utf-8')
 const header =
@@ -22,7 +21,7 @@ const header =
     '// @grant\n' +
     '// ==/UserScript==\n'
 
-const filename = `doujin-event-viewer-${pkg.version}.${isDebug ? 'debug' : 'stable'}.user.js`
+const filename = `doujin-event-viewer-${pkg.version}.stable.user.js`
 const outputPath = path.join(__dirname, `../dist/${filename}`)
 
 fs.writeFileSync(outputPath, `${header}${code}`, 'utf-8')
