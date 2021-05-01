@@ -58,20 +58,19 @@ const update = (el, obj) => {
  * @param {string} obj.locale A 2 character locale string for date.
  */
 const addEventsToDates = (obj) => {
-  if (window.location.href.match(obj.url)) {
-    obj.el.forEach(value => {
-      const el = $(value)
+  if (!window.location.href.match(obj.url)) return;
+  obj.el.forEach(value => {
+    const el = $(value)
 
-      for (const key in el) {
-        if (Object.prototype.hasOwnProperty.call(el, key)) {
-          // Do not entertain empty innertexts and non-Element properties.
-          if (!el[key].innerText || !(el[key] instanceof Element)) return
+    for (const key in el) {
+      if (!Object.prototype.hasOwnProperty.call(el, key)) continue;
 
-          update(el[key], obj)
-        }
-      }
-    })
-  }
+      // Do not entertain empty innertexts and non-Element properties.
+      if (!el[key].innerText || !(el[key] instanceof Element)) continue;
+
+      update(el[key], obj)
+    }
+  })
 }
 
 export default addEventsToDates
