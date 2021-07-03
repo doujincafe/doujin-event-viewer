@@ -16,7 +16,7 @@ const formatToEventObject = (text) => {
       const [name, eventDate] = value.split(':')
       const date = eventDate.replace(/\s/g, '')
 
-      if (!date.indexOf('-') > 0) {
+      if (!(date.indexOf('-') > 0)) {
         return {
           evt: name,
           value: date.replace(/\./g, '/')
