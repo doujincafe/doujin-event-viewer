@@ -9,7 +9,8 @@ updates:
   - package-ecosystem: "npm"
     directory: "/" # Location of package manifests
     schedule:
-      interval: "daily"
+      interval: "weekly"
+      day: "wednesday"
     commit-message:
       prefix: "[chore]"
     reviewers:
