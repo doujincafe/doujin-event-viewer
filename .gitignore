@@ -15,3 +15,7 @@ dist/*
 !.yarn/plugins
 !.yarn/sdks
 !.yarn/versions
+
+# Ignore editor generated files
+.idea/
+

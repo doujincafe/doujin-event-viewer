@@ -11,7 +11,7 @@ import events from '../common/events.json'
 
 /**
  * Update
- * @param {Element} el target element to write events
+ * @param {HTMLElement} el target element to write events
  * @param {Object} obj Support config
  * @param {RegExp} obj.url A regex to match what URLs the config should run
  * @param {RegExp} obj.date A regex to match dates on target elements
@@ -58,15 +58,15 @@ const update = (el, obj) => {
  * @param {string} obj.locale A 2 character locale string for date.
  */
 const addEventsToDates = (obj) => {
-  if (!window.location.href.match(obj.url)) return;
+  if (!window.location.href.match(obj.url)) return
   obj.el.forEach(value => {
     const el = $(value)
 
     for (const key in el) {
-      if (!Object.prototype.hasOwnProperty.call(el, key)) continue;
+      if (!Object.prototype.hasOwnProperty.call(el, key)) continue
 
-      // Do not entertain empty innertexts and non-Element properties.
-      if (!el[key].innerText || !(el[key] instanceof Element)) continue;
+      // Do not entertain empty inner texts and non-Element properties.
+      if (!el[key].innerText || !(el[key] instanceof Element)) continue
 
       update(el[key], obj)
     }
