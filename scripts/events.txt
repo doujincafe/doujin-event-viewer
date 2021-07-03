@@ -151,6 +151,7 @@ M3-44 (M3-2019秋): 2019.10.27
 M3-45 (M3-2020春): 2020.03.01
 M3-46 (M3-2020秋): 2020.10.25
 M3-47 (M3-2021春): 2021.04.25
+M3-48 (M3-2021秋): 2021.10.31
 
 # 例大祭 (Reitaisai)
 
@@ -266,9 +267,13 @@ M3-47 (M3-2021春): 2021.04.25
 エア例大祭8: 2011.03.13
 エア例大祭17: 2020.05.17
 
-# ComikcVket
+# ComicVket
 
 ComicVKet1: 2020.08.13-2020.08.16
+
+# MusicVKet
+
+MusicVket2: 2021.03.06-2021.03.10
 
 # APOLLO / APOLLO 第X回
 
@@ -555,6 +560,7 @@ COMIC1☆13: 2018.04.30
 COMIC1☆14: 2018.10.14
 COMIC1☆15: 2019.04.29
 COMIC1☆16: 2019.10.06
+COMIC1 BS祭 スペシャル: 2021.05.23
 
 # ComicTreasure / - こみっく★トレジャー，こみっくとれじゃー
 
@@ -864,14 +870,14 @@ VOCALOID GENERATION 7: 2018.05.06
 # Uncomment any Foreign Events below if you want to include other
 # events below.
 
-# # 例大祭 in 台湾 / Reitaisai in Taiwan
+# 例大祭 in 台湾 / Reitaisai in Taiwan
 #
 # 例大祭 in 台湾1: 2015.06.06
 # 例大祭 in 台湾1.5: 2016.02.21
 # 例大祭 in 台湾2: 2017.05.28
 # 例大祭 in 台湾3: 2019.06.16
 #
-# # 博丽神社歌谣祭 in X / Reitaisai in X
+# 博丽神社歌谣祭 in X / Reitaisai in X
 #
 # 博丽神社歌谣祭: 2016.07.03
 # 博丽神社歌谣祭in台湾: 2017.05.27
@@ -882,13 +888,13 @@ VOCALOID GENERATION 7: 2018.05.06
 # 博丽神社歌谣祭in台湾2: 2019.06.15
 # 博丽神社歌谣祭in东京 2019: 2019.11.16
 #
-# # ComicBazaar / CB
+# ComicBazaar / CB
 #
 # ComicBazaar01: 2018.03.31
 # ComicBazaar02: 2019.09.21-2019.09.22
 #
 #
-# # 上海THONLY / 上海TH
+# 上海THONLY / 上海TH
 #
 # 上海TH01: 2009.03.22
 # 上海TH02: 2009.12.20
@@ -901,7 +907,7 @@ VOCALOID GENERATION 7: 2018.05.06
 # 上海TH09: 2018.08.18
 # 上海TH10: 2019.08.17-2019.08.18
 #
-# # COMICUP / 上海CP / 官方简称为CP
+# COMICUP / 上海CP / 官方简称为CP
 #
 # COMICUP01: Unknown
 # COMICUP02: Unknown
@@ -943,7 +949,7 @@ VOCALOID GENERATION 7: 2018.05.06
 # COMICUP27: 2021.01.01-2021.01.02
 #
 #
-# # COMIDAY / CD
+# COMIDAY / CD
 #
 # COMIDAY1: 2008.02.23
 # COMIDAY2: 2008.07.26-2008.07.27
@@ -971,7 +977,7 @@ VOCALOID GENERATION 7: 2018.05.06
 # COMIDAY24: 2019.10.05-2019.10.06
 #
 #
-# # Fancy Frontier
+# Fancy Frontier
 #
 # FancyFrontier1: 2002.10.05-2002.10.06
 # FancyFrontier2: 2003.07.19-2003.07.20
@@ -1011,7 +1017,7 @@ VOCALOID GENERATION 7: 2018.05.06
 # FancyFrontier35: 2020.02.01-2020.02.02
 #
 #
-# # 重庆ComiTime雾都同人祭 / ComiTime
+# 重庆ComiTime雾都同人祭 / ComiTime
 #
 # ComiTime1: 2009.11.29
 # ComiTime2: 2010.06.15
