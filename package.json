@@ -13,7 +13,7 @@
     "replaceall": "^0.1.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.0",
+    "@babel/core": "^7.14.8",
     "@babel/preset-env": "^7.14.0",
     "babel-loader": "^8.2.2",
     "eslint": "7.30.0",
