@@ -27,6 +27,6 @@
   },
   "scripts": {
     "build": "node ./scripts/generateEventJson.js && yarn run webpack && node ./scripts/insertTampermonkeyHeaders.js && node ./scripts/resetEventJson.js",
-    "fix": "yarn run eslint --fix ./src/*"
+    "fix": "npx eslint --fix ./src/*"
   }
 }

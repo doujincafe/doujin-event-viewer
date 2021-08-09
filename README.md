@@ -12,15 +12,18 @@ It should prompt tampermonkey to install the script otherwise, you need to copy 
 
 ## Compiling from Source
 
-Before you compile the project, ensure you have the latest Node.js and Yarn.
+Before you compile the project, ensure you have the latest Node.js.
 
 1. Clone the repository: `git clone https://github.com/aikoofujimotoo/doujin-event-viewer.git`
 2. Get inside: `cd doujin-event-viewer`
-3. Run `yarn build`
+3. Install dependencies: `npm install`
+4. Build: `npm run build`
+
+On successful compile, the compiled file will be available under `dist/` directory.
 
 ## Browser Compatibility
 
-This works on most modern browsers. This script doesn't support IE8 and below (Who uses those anyway).
+Supports browsers that are ES5 compliant. For more detail, [see this table containing supported browsers](https://kangax.github.io/compat-table/es5/)
 
 ## License
 
