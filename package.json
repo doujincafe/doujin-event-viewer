@@ -9,7 +9,7 @@
   "private": true,
   "dependencies": {
     "cash-dom": "^8.1.0",
-    "luxon": "^1.26.0",
+    "luxon": "^2.0.1",
     "replaceall": "^0.1.6"
   },
   "devDependencies": {
