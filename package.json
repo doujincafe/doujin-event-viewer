@@ -20,7 +20,6 @@
     "webpack-cli": "^4.6.0"
   },
   "scripts": {
-    "build": "node ./scripts/generateEventJson.js && yarn run webpack && node ./scripts/insertTampermonkeyHeaders.js && node ./scripts/resetEventJson.js",
-    "fix": "npx eslint --fix ./src/*"
+    "build": "node ./scripts/generateEventJson.js && webpack && node ./scripts/insertTampermonkeyHeaders.js && node ./scripts/resetEventJson.js"
   }
 }
