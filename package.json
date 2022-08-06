@@ -20,6 +20,6 @@
     "webpack-cli": "^4.6.0"
   },
   "scripts": {
-    "build": "node ./scripts/generateEventJson.js && webpack && node ./scripts/insertTampermonkeyHeaders.js && node ./scripts/resetEventJson.js"
+    "build": "node ./scripts/prebuild.js && webpack && node ./scripts/postbuild.js"
   }
 }
