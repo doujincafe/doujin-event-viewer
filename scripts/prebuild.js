@@ -1,6 +1,6 @@
 // ============================================================================
 // Event Viewer
-// Copyright (C) 2021 Aiko Fujimoto
+// Copyright (C) 2023 Aiko Fujimoto & Contributors
 //
 // Licensed under MIT
 // ============================================================================
@@ -42,7 +42,7 @@ const data = fs.readFileSync(eventTextPath, 'utf-8')
   })
 
 fs.writeFileSync(
-  path.join(__dirname, '../src/common/events.json'),
+  path.join(__dirname, '../src/events.json'),
   JSON.stringify(data, null, 2),
   'utf-8'
 )

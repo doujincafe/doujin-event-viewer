@@ -1,6 +1,6 @@
 // ============================================================================
 // Event Viewer
-// Copyright (C) 2021 Aiko Fujimoto
+// Copyright (C) 2023 Aiko Fujimoto & Contributors
 //
 // Licensed under MIT
 // ============================================================================
@@ -8,7 +8,7 @@
 const path = require('path')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.ts',
   mode: 'production',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -17,11 +17,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.ts$/,
         exclude: /node_modules/,
         loader: 'babel-loader'
       }
     ]
+  },
+  resolve: {
+    extensions: ['.ts']
   },
   optimization: {
     minimize: true

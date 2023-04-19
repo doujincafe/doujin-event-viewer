@@ -1,6 +1,6 @@
 {
   "name": "event-viewer",
-  "version": "1.5.11",
+  "version": "1.5.12",
   "description": "A event viewer script to modify dates in event stores such as suruga-ya to indicate event names",
   "main": "./src/index.js",
   "repository": "https://github.com/aikoofujimotoo/event-viewer",
@@ -8,18 +8,20 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "cash-dom": "^8.1.0",
-    "luxon": "^2.0.1",
-    "replaceall": "^0.1.6"
+    "luxon": "^3.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
-    "babel-loader": "^8.2.2",
+    "@babel/preset-typescript": "^7.21.4",
+    "@types/luxon": "^3.3.0",
+    "babel-loader": "^9.1.2",
+    "typescript": "^5.0.4",
     "webpack": "^5.49.0",
-    "webpack-cli": "^4.6.0"
+    "webpack-cli": "^5.0.1"
   },
   "scripts": {
-    "build": "node ./scripts/prebuild.js && webpack && node ./scripts/postbuild.js"
+    "build": "node ./scripts/prebuild.js && webpack --stats-error-details --config ./webpack.config.js && node ./scripts/postbuild.js",
+    "build:script-only": "webpack --config ./webpack.config.js"
   }
 }
